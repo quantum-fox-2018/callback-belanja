@@ -15,18 +15,33 @@ let martabak = new ObjItems("Martabak Oriens",25000,3000);
 let tissue = new ObjItems("Tissue",7500,20);
 
 
-let uang = 300000;
+let uang = 50000;
 
 belanja(uang,apple,function(uang_kembalian){
   uang = uang_kembalian;
+  if(uang<=0){
+    return;
+  }
   belanja(uang,roti,function(uang_kembalian){
     uang = uang_kembalian;
+    if(uang<=0){
+      return;
+    }
     belanja(uang,martabak,function(uang_kembalian){
       uang = uang_kembalian;
+      if(uang<=0){
+        return;
+      }
       belanja(uang,air,function(uang_kembalian){
         uang = uang_kembalian;
+        if(uang<=0){
+          return;
+        }
         belanja(uang,tissue,function(uang_kembalian){
           uang = uang_kembalian
+          if(uang<=0){
+            return;
+          }
         })
       })
     })
